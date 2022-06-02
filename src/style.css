@@ -1,0 +1,27 @@
+body {
+  overflow-x: none;
+}
+/* side */
+.bezier {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+
+  background: linear-gradient(99.32deg, #b4cd93 7.91%, #427a5b 88.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+aside a {
+  color: gray;
+  text-decoration: none;
+}
+.menu-options:hover {
+  background-color: #b4cd93;
+  border-radius: 5px;
+  color: #4c4c4c;
+}
+
+.grayBackground {
+  background-color: #e5e5e5;
+}
