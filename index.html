@@ -6,5 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      array = [
+        { name: "James", age: 9, country: "United States" },
+        { name: "Rony", age: 31, country: "United Kingdom" },
+        { name: "Peter", age: 58, country: "Canada" },
+        { name: "Marks", age: 20, country: "Spain" },
+      ];
+      const ids = [];
+      let body = document.body;
+      let tbl = document.createElement("table");
+      function tableCreate() {
+        tbl.style.width = "200px";
+        tbl.style.border = "1px solid black";
+        const head = ["Name", "Age", "Country"];
+
+        for (let i = 0; i < 5; i++) {
+          let tr = tbl.insertRow();
+
+          for (let j = 0; j < 3; j++) {
+            let td = tr.insertCell();
+            if (i == 0) {
+              td.appendChild(document.createTextNode(`${head[j]}`));
+            } else {
+              if (j == 0) {
+                td.appendChild(document.createTextNode(`${array[i - 1].name}`));
+              }
+              if (j == 1) {
+                td.appendChild(document.createTextNode(`${array[i - 1].age}`));
+              }
+              if (j == 2) {
+                td.appendChild(
+                  document.createTextNode(`${array[i - 1].country}`)
+                );
+              }
+            }
+
+            td.style.border = "1px solid black";
+            if (i != 0) {
+              if (array[i - 1].age < 10) {
+                td.style.backgroundColor = "yellow";
+              } else if (array[i - 1].age < 40) {
+                td.style.backgroundColor = "green";
+              } else if (array[i - 1].age < 80) {
+                td.style.backgroundColor = "red";
+              } else {
+                td.style.backgroundColor = "blue";
+              }
+            }
+          }
+        }
+        body.appendChild(tbl);
+      }
+
+      tableCreate();
+    </script>
+  </body>
 </html>
