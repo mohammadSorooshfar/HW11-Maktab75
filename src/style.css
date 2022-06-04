@@ -346,3 +346,12 @@ td ul {
 .background-right-content {
   background-color: #fcfcfc;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+table {
+  width: 800px;
+}
+.darkBlue {
+  background-color: #1f2937;
+}
