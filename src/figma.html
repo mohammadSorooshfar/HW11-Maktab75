@@ -10,78 +10,493 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <main class="row h-100">
-      <aside class="col-2 grayBackground px-5 py-3 h-100">
-        <div class="d-flex flex-column justify-content-between">
-          <div class="p-2 d-flex">
-            <img class="me-2" src="../assets/vuesax/linear/bezier.png" alt="" />
-            <h2 class="bezier">Bezier</h2>
+    <aside class="grayBackground p-5 position-fixed">
+      <div class="d-flex flex-column justify-content-between h-75">
+        <div class="p-2 d-flex">
+          <img class="me-2" src="../assets/vuesax/linear/bezier.png" alt="" />
+          <h2 class="bezier">Bezier</h2>
+        </div>
+        <div class="text-secondary">
+          <div class="menu-options p-2">
+            <img
+              class="me-2"
+              src="../assets/vuesax/linear/category.png"
+              alt=""
+            /><a>Dashboard</a>
           </div>
-          <div class="text-secondary">
-            <div class="menu-options p-2">
-              <img
-                class="me-2"
-                src="../assets/vuesax/linear/category.png"
-                alt=""
-              /><a>Dashboard</a>
-            </div>
-            <div class="menu-options p-2">
-              <img
-                class="me-2"
-                src="../assets/vuesax/linear/vuesax/linear/profile.png"
-                alt=""
-              /><a>Artist</a>
-            </div>
-            <div class="menu-options p-2">
-              <img
-                class="me-2"
-                src="../assets/vuesax/linear/gallery.png"
-                alt=""
-              /><a>Projects</a>
-            </div>
-            <div class="menu-options p-2">
-              <img
-                class="me-2"
-                src="../assets/vuesax/linear/receipt-2.png"
-                alt=""
-              /><a>Sales</a>
-            </div>
+          <div class="menu-options p-2">
+            <img
+              class="me-2"
+              src="../assets/vuesax/linear/vuesax/linear/profile.png"
+              alt=""
+            /><a>Artist</a>
           </div>
-          <div class="text-secondary">
-            <div class="menu-options p-2">
-              <img
-                class="me-2"
-                src="../assets/vuesax/linear/setting-2.png"
-                alt=""
-              /><a>Settings</a>
-            </div>
-            <div class="menu-options p-2">
-              <img
-                class="me-2"
-                src="../assets/vuesax/linear/logout.png"
-                alt=""
-              /><a>Logout</a>
-            </div>
+          <div class="menu-options p-2">
+            <img
+              class="me-2"
+              src="../assets/vuesax/linear/gallery.png"
+              alt=""
+            /><a>Projects</a>
+          </div>
+          <div class="menu-options p-2">
+            <img
+              class="me-2"
+              src="../assets/vuesax/linear/receipt-2.png"
+              alt=""
+            /><a>Sales</a>
           </div>
         </div>
-      </aside>
-      <article class="col bg-danger py-3 px-2">
-        <div class="d-flex justify-content-between">
-          <input type="text" />
+        <div class="text-secondary">
+          <div class="menu-options p-2">
+            <img
+              class="me-2"
+              src="../assets/vuesax/linear/setting-2.png"
+              alt=""
+            /><a>Settings</a>
+          </div>
+          <div class="menu-options p-2">
+            <img
+              class="me-2"
+              src="../assets/vuesax/linear/logout.png"
+              alt=""
+            /><a>Logout</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <article class="py-5 px-2">
+      <div class="d-flex justify-content-between">
+        <div class="left-content p-2">
+          <!-- top search -->
           <div>
-            <img src="" alt="" />
-            <div class="d-flex flex-column">
-              <p>Karim Benzema</p>
-              <p>Admin</p>
+            <img
+              src="../assets/search-normal.png"
+              alt=""
+              class="search-icon-top"
+            />
+            <input
+              type="text"
+              class="w-100 big-search-bar"
+              placeholder="Search artists, projects"
+            />
+          </div>
+          <!-- stats -->
+          <div class="stats">
+            <p class="title-stats-section">In the last 30 days,</p>
+            <div class="stats-images">
+              <div>
+                <p class="numbers">30,000</p>
+                <p class="context">Art sales</p>
+              </div>
+              <div>
+                <p class="numbers">250</p>
+                <p class="context">New artists</p>
+              </div>
+              <div>
+                <p class="numbers">$400,000</p>
+                <p class="context">Revenue generated</p>
+              </div>
             </div>
-            <div></div>
+          </div>
+          <!-- artists -->
+          <div class="all-artists">
+            <div class="all-artists-top">
+              <div class="all-artists-top-left">
+                <h2>All artists</h2>
+                <p>Monitor artist sales, reviews, etc.</p>
+              </div>
+              <div class="all-artists-top-right">
+                <div>
+                  <img
+                    src="../assets/search-normal.png"
+                    alt=""
+                    class="search-icon-middle"
+                  />
+                  <input
+                    type="text"
+                    class="small-search-bar"
+                    placeholder="Search artists"
+                  />
+                </div>
+                <button><i class="fa fa-filter"> Filter</i></button>
+              </div>
+            </div>
+            <!-- table of artists -->
+            <table class="table align-middle mb-0 bg-white artists-table">
+              <thead class="table-gray-bg">
+                <tr>
+                  <th>Artist</th>
+                  <th>Status</th>
+                  <th>Ratings</th>
+                  <th>Projects sold</th>
+                  <th>Highest sale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../assets/image 12.png"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                      />
+                      <p class="fw-bold m-0 ms-2">bluenose</p>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge status-green rounded">Verified</span>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center rating-column">
+                      <div class="progress progress-div">
+                        <div
+                          class="progress-bar bg-dark"
+                          style="width: 40%"
+                        ></div>
+                      </div>
+                      <p>40%</p>
+                      <span class="badge rating-up rounded"
+                        ><i class="fa fa-arrow-up"> 4%</i></span
+                      >
+                    </div>
+                  </td>
+                  <td>400</td>
+                  <td>400,000$</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../assets/fasdfasdf.png"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                      />
+                      <p class="fw-bold m-0 ms-2">Pennywise</p>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge status-yellow rounded">pending</span>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center rating-column">
+                      <div class="progress progress-div">
+                        <div
+                          class="progress-bar bg-dark"
+                          style="width: 57%"
+                        ></div>
+                      </div>
+                      <p>57%</p>
+                      <span class="badge rating-down rounded"
+                        ><i class="fa fa-arrow-down"> 8%</i></span
+                      >
+                    </div>
+                  </td>
+                  <td>200</td>
+                  <td>400,000$</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../assets/image 10.png"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                      />
+                      <p class="fw-bold m-0 ms-2">Flotsam</p>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge status-green rounded">Verified</span>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center rating-column">
+                      <div class="progress progress-div">
+                        <div
+                          class="progress-bar bg-dark"
+                          style="width: 89%"
+                        ></div>
+                      </div>
+                      <p>89%</p>
+                      <span class="badge rating-up rounded"
+                        ><i class="fa fa-arrow-up"> 19%</i></span
+                      >
+                    </div>
+                  </td>
+                  <td>40,000</td>
+                  <td>$1,400,000</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../assets/Ellipse 3-1.png"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                      />
+                      <p class="fw-bold m-0 ms-2">Gregautsch</p>
+                    </div>
+                  </td>
+                  <td>Unverified</td>
+                  <td>No ratings available</td>
+                  <td>0</td>
+                  <td>$0</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../assets/Ellipse 3.png"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                      />
+                      <p class="fw-bold m-0 ms-2">ElPistolero</p>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge status-green rounded">Verified</span>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center rating-column">
+                      <div class="progress progress-div">
+                        <div
+                          class="progress-bar bg-dark"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                      <p>50%</p>
+                      <span class="badge rating-down rounded"
+                        ><i class="fa fa-arrow-down"> 6%</i></span
+                      >
+                    </div>
+                  </td>
+                  <td>30</td>
+                  <td>$25,000</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../assets/2. Indian Man.png"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                      />
+                      <p class="fw-bold m-0 ms-2">Siuuuuuuuu</p>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge status-yellow rounded">Pending</span>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center rating-column">
+                      <div class="progress progress-div">
+                        <div
+                          class="progress-bar bg-dark"
+                          style="width: 64%"
+                        ></div>
+                      </div>
+                      <p>64%</p>
+                      <span class="badge rating-up rounded"
+                        ><i class="fa fa-arrow-up"> 7%</i></span
+                      >
+                    </div>
+                  </td>
+                  <td>400</td>
+                  <td>$400,000</td>
+                </tr>
+              </tbody>
+              <tfoot class="table-gray-bg">
+                <tr>
+                  <td colspan="2">
+                    <ul
+                      class="d-flex align-items-center m-2 justify-content-between"
+                    >
+                      <li class="disabled previous">
+                        <a>Previous page</a>
+                      </li>
+                      <li class="page-number">
+                        <a href="#">1</a>
+                      </li>
+                      <li class="page-number">
+                        <a href="#">2</a>
+                      </li>
+                      <li class="page-number">
+                        <a href="#">3</a>
+                      </li>
+                      <li class="page-number">
+                        <a href="#">4</a>
+                      </li>
+                      <li class="page-number">
+                        <a href="#">5</a>
+                      </li>
+                      <li class="page-number">
+                        <a href="#">6</a>
+                      </li>
+                      <li class="page-number">
+                        <a href="#">7</a>
+                      </li>
+                      <li class="next">
+                        <a>Next page</a>
+                      </li>
+                    </ul>
+                  </td>
+                  <td colspan="3"></td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
         </div>
-      </article>
-    </main>
+        <div class="right-content p-2 d-flex flex-column align-items-center">
+          <div class="d-flex profile-notification-div justify-content-between">
+            <div class="d-flex profile">
+              <img src="../assets/Ellipse 1.png" alt="" />
+              <div class="profile-name">
+                <p>Karim Benzema</p>
+                <p>Admin</p>
+              </div>
+            </div>
+            <div class="notification">
+              <img src="../assets/notification.png" alt="" />
+            </div>
+          </div>
+          <!-- best selling artist -->
+          <div
+            class="best-selling-artist-div d-flex flex-column align-items-center background-right-content"
+          >
+            <h2>Best-selling artists</h2>
+            <div class="best-selling-artist-table d-flex flex-column">
+              <div
+                class="best-selling-artist-table-row d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center">
+                  <img
+                    src="../assets/image 10.png"
+                    alt=""
+                    style="width: 32px; height: 32px"
+                    class="rounded-circle"
+                  />
+                  <p class="fw-bold m-0 ms-2">Flotsam</p>
+                </div>
+                <p>40k+ sales</p>
+                <p>$1.4m revenue</p>
+              </div>
+              <div
+                class="best-selling-artist-table-row d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center">
+                  <img
+                    src="../assets/2. Indian Man.png"
+                    alt=""
+                    style="width: 32px; height: 32px"
+                    class="rounded-circle"
+                  />
+                  <p class="fw-bold m-0 ms-2">Siuuuu</p>
+                </div>
+                <p>40k+ sales</p>
+                <p>$1.4m revenue</p>
+              </div>
+              <div
+                class="best-selling-artist-table-row d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center">
+                  <img
+                    src="../assets/image 12.png"
+                    alt=""
+                    style="width: 32px; height: 32px"
+                    class="rounded-circle"
+                  />
+                  <p class="fw-bold m-0 ms-2">bluenose</p>
+                </div>
+                <p>40k+ sales</p>
+                <p>$1.4m revenue</p>
+              </div>
+            </div>
+            <button>View all artists</button>
+          </div>
+          <!-- best selling project -->
+          <div
+            class="best-selling-project-div d-flex flex-column align-items-center background-right-content"
+          >
+            <h2>Best-selling projects</h2>
+            <div class="best-selling-project-table d-flex flex-column">
+              <div
+                class="best-selling-project-table-row d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center">
+                  <img
+                    src="../assets/Rectangle 24.png"
+                    alt=""
+                    style="width: 32px; height: 32px"
+                    class="rounded-circle"
+                  />
+                  <p class="fw-bold m-0 ms-2">Flotsam</p>
+                </div>
+                <p>40k+ sales</p>
+                <p>$1.4m revenue</p>
+              </div>
+              <div
+                class="best-selling-project-table-row d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center">
+                  <img
+                    src="../assets/Vectary texture-1.png"
+                    alt=""
+                    style="width: 32px; height: 32px"
+                    class="rounded-circle"
+                  />
+                  <p class="fw-bold m-0 ms-2">Siuuuu</p>
+                </div>
+                <p>10k+ sales</p>
+                <p>$1.4m revenue</p>
+              </div>
+              <div
+                class="best-selling-project-table-row d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex align-items-center">
+                  <img
+                    src="../assets/Vectary texture.png"
+                    alt=""
+                    style="width: 32px; height: 32px"
+                    class="rounded-circle"
+                  />
+                  <p class="fw-bold m-0 ms-2">bluenose</p>
+                </div>
+                <p>10k+ sales</p>
+                <p>$1.4m revenue</p>
+              </div>
+            </div>
+            <button>View all projects</button>
+          </div>
+          <!-- clock -->
+          <div
+            class="clock-date d-flex justify-content-between align-items-center background-right-content"
+          >
+            <div
+              class="clock d-flex align-items-center justify-content-between"
+            >
+              <div class="hour-minute hour">10</div>
+              <div class="colon">:</div>
+              <div class="hour-minute minute">34</div>
+              <div class="am-pm">AM</div>
+            </div>
+            <p class="date"></p>
+          </div>
+        </div>
+      </div>
+    </article>
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -89,5 +504,20 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script>
+      ut();
+      window.setInterval(ut, 1000);
+
+      function ut() {
+        let d = new Date();
+        let time = d.toLocaleTimeString().split(" ");
+        let hour = time[0].split(":")[0];
+        let minute = time[0].split(":")[1];
+        document.querySelector(".hour").innerHTML = hour;
+        document.querySelector(".minute").innerHTML = minute;
+        document.querySelector(".am-pm").innerHTML = time[1];
+        document.querySelector(".date").innerHTML = d.toLocaleDateString();
+      }
+    </script>
   </body>
 </html>
